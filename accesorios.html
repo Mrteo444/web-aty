@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Baristas</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i"
+        rel="stylesheet" />
+    <link href="css/styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="styles1.css" />
+</head>
+
+<body>
+    <header>
+        <div id="header-placeholder"></div>
+
+        <header class="masthead text-center text-white">
+            <div class="masthead-content">
+                <div class="container px-5">
+                    <img src="assets/img/logo4.png" alt="Icono de NC Studio" id="icono-pequeno2">
+
+                    <h1 class="masthead-heading mb-0">FURLINE</h1>
+                    <h2 class="masthead-subheading mb-0">NC STUDIO</h2>
+                </div>
+            </div>
+            <div class="bg-circle-1 bg-circle"></div>
+            <div class="bg-circle-2 bg-circle"></div>
+            <div class="bg-circle-3 bg-circle"></div>
+            <div class="bg-circle-4 bg-circle"></div>
+        </header>
+    </header>
+
+    <main class="main-content">
+        <section class="container top-categories">
+            <h1 class="heading-1">Mejores Categorías</h1>
+            <div class="container px-5">
+                <a class="btn btn-primary btn-xl rounded-pill mt-5" href="tinda.html">regresar</a>
+               
+            </div>
+        </section>
+
+        <section class="container-items">
+            <div class="item">
+                <figure>
+                    <img src="assets/img/ac1.jpeg" alt="producto" />
+                </figure>
+                <div class="info-product">
+                    <h2>pantalon1</h2>
+                    <p class="price">$5</p>
+                    <button class="btn-add-cart">Añadir al carrito</button>
+                </div>
+            </div>
+            <div class="item">
+                <figure>
+                    <img src="assets/img/ac2.jpeg" alt="producto" />
+                </figure>
+                <div class="info-product">
+                    <h2>pantalon2</h2>
+                    <p class="price">$7</p>
+                    <button class="btn-add-cart">Añadir al carrito</button>
+                </div>
+            </div>
+            <div class="item">
+                <figure>
+                    <img src="assets/img/ac3.jpeg" alt="producto" />
+                </figure>
+                <div class="info-product">
+                    <h2>pantalon3</h2>
+                    <p class="price">$3</p>
+                    <button class="btn-add-cart">Añadir al carrito</button>
+                </div>
+            </div>
+        </section>
+       
+         
+
+
+
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <div id="footer-placeholder"></div>
+
+    <script>
+        // Función para cargar HTML de un archivo externo (modificada para devolver una promesa)
+        function includeHTML(url, targetId) {
+            return fetch(url)
+                .then(response => {
+                    if (!response.ok) {
+                        // Muestra el error en la consola si el archivo no se encuentra
+                        throw new Error(`Error: No se pudo cargar el archivo ${url}. Revisa la ruta.`);
+                    }
+                    return response.text();
+                })
+                .then(data => {
+                    // Inserta el contenido del archivo en el contenedor
+                    document.getElementById(targetId).innerHTML = data;
+                })
+                .catch(error => console.error('Error al incluir HTML:', error));
+        }
+        
+        // Función principal para cargar todo y configurar listeners
+        document.addEventListener('DOMContentLoaded', () => {
+            // Cargar el header primero y esperar a que termine
+            includeHTML('header.html', 'header-placeholder')
+                .then(() => {
+                    // Una vez que el header y el carrito están en el DOM,
+                    // cargamos el footer y configuramos los listeners del carrito.
+                    includeHTML('footer.html', 'footer-placeholder');
+                    
+                    // Aquí llamamos a la función del script index.js
+                    // para que los listeners encuentren los elementos en el DOM.
+                    // ¡Esto soluciona el problema de que el carrito no reaccione!
+                    if (typeof setupCartEventListeners === 'function') {
+                        setupCartEventListeners();
+                    }
+                });
+        });
+
+    </script>
+
+    <script src="https://kit.fontawesome.com/81581fb069.js" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+</body>
+
+
+
+</html>
