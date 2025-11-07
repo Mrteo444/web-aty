@@ -1,0 +1,110 @@
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tienda</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i"
+        rel="stylesheet" />
+    <link href="css/styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="styles1.css" />
+</head>
+     
+    
+
+<body>
+    <header>
+        <div id="header-placeholder"></div>
+
+        <header class="masthead text-center text-white">
+            <div class="masthead-content">
+                <div class="container px-5">
+                    <img src="assets/img/logo4.png" alt="Icono de NC Studio" id="icono-pequeno2">
+
+                    <h1 class="masthead-heading mb-0">FURLINE NC</h1>
+                    <h2 class="masthead-subheading mb-0">STUDIO</h2>
+                    <a class="btn btn-primary btn-xl rounded-pill mt-5" href="tinda.html">REVISAR CATALOGO</a>
+                </div>
+            </div>
+            <div class="bg-circle-1 bg-circle"></div>
+            <div class="bg-circle-2 bg-circle"></div>
+            <div class="bg-circle-3 bg-circle"></div>
+            <div class="bg-circle-4 bg-circle"></div>
+        </header>
+    </header>
+
+
+
+        <section id="scroll">
+    
+    <div class="full-width-carousel-wrapper"> 
+        <div id="imageCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#imageCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#imageCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#imageCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#imageCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                <button type="button" data-bs-target="#imageCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+            </div>
+
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="2000"> <img src="assets/img/ac1.jpeg" class="d-block w-100 carousel-img" alt="Descripción de la imagen 1">
+                </div>
+                <div class="carousel-item" data-bs-interval="2000"> <img src="assets/img/jean11.jpeg" class="d-block w-100 carousel-img" alt="Descripción de la imagen 2">
+                </div>
+                <div class="carousel-item" data-bs-interval="2000"> <img src="assets/img/jean2.jpeg" class="d-block w-100 carousel-img" alt="Descripción de la imagen 3">
+                </div>
+                <div class="carousel-item" data-bs-interval="2000"> <img src="assets/img/ac2.jpeg" class="d-block w-100 carousel-img" alt="Descripción de la imagen 4">
+                </div>
+                <div class="carousel-item" data-bs-interval="2000"> <img src="assets/img/ac3.jpeg" class="d-block w-100 carousel-img" alt="Descripción de la imagen 5">
+                </div>
+            </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#imageCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#imageCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+    
+
+    
+</section>
+
+
+        <div id="footer-placeholder"></div>
+
+    <script>
+        // Función para cargar HTML de un archivo externo
+        function includeHTML(url, targetId) {
+            fetch(url)
+                .then(response => {
+                    if (!response.ok) {
+                        // Muestra el error en la consola si el archivo no se encuentra
+                        throw new Error(`Error: No se pudo cargar el archivo ${url}. Revisa la ruta.`);
+                    }
+                    return response.text();
+                })
+                .then(data => {
+                    // Inserta el contenido del archivo en el contenedor
+                    document.getElementById(targetId).innerHTML = data;
+                })
+                .catch(error => console.error('Error al incluir HTML:', error));
+        }
+
+        // Llamadas a la función
+        includeHTML('header.html', 'header-placeholder');
+        includeHTML('footer.html', 'footer-placeholder');
+    </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="js/scripts.js"></script>
+    </body>
+</html>

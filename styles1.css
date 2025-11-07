@@ -1,0 +1,361 @@
+ /* Estilos CSS mínimos para el filtro - Idealmente, deberían ir en tu styles.css o styles1.css */
+        .product-item {
+            transition: all 0.5s ease-in-out;
+            display: block;
+            /* Aseguramos que se muestre como bloque inicialmente si es la categoría 'todos' */
+        }
+
+        .filter-btn.active {
+            background-color: #6c757d !important;
+            /* Color gris oscuro - Usa !important si es necesario */
+            border-color: #6c757d !important;
+            font-weight: bold;
+        }
+
+        /* Opcional: Si quieres un desplazamiento más suave en toda la página */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* ESTILO PARA EL LOGO SOLICITADO - AÑÁDELO A TU ARCHIVO CSS PRINCIPAL */
+        .logo-nosotros {
+            max-width: 200px;
+            /* Ajusta el tamaño de la imagen */
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            /* Centrar si es necesario */
+            border-radius: 10px;
+            /* Borde redondeado opcional */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            /* Sombra opcional */
+        }
+
+        /* Añadido para el espaciado entre el texto y la imagen en las secciones */
+        .section-content-with-image {
+            margin-bottom: 2rem;
+            /* Espacio debajo de la imagen y el texto */
+        }
+
+        /* ========================================================
+        ⭐ AUMENTAR TAMAÑO DEL TEXTO GENERAL (incluye Subtítulos) ⭐
+        ========================================================
+        */
+        .container p,
+        .container li {
+            font-size: 1.15rem;
+            /* Tamaño de fuente aumentado para párrafos y listas */
+            line-height: 1.8;
+            /* Interlineado mejorado para legibilidad */
+        }
+
+        /* Aumentar el tamaño de los subtítulos (h3 y h4) */
+        .container h3 {
+            font-size: 1.85rem; /* Aumenta el h3 */
+        }
+
+        .container h4 {
+            font-size: 1.45rem; /* Aumenta el h4 */
+        }
+        
+        /* Ajuste para el texto que debe permanecer pequeño */
+        .container p.small {
+            font-size: 0.95rem;
+            /* Mantiene el texto pequeño */
+            line-height: 1.5;
+            /* Ajusta el interlineado para el texto pequeño */
+        }
+/* ================================== */
+/* === ESTILOS PARA BOTÓN WHATSAPP === */
+/* ================================== */
+
+/* --- ESTILO PARA EL INFOGRAMA CENTRADO --- */
+.infograma-centrado {
+    max-width: 65%; /* Asegura que la imagen sea responsive */
+    height: auto; /* Mantiene la proporción */
+    display: block; /* Necesario para que margin: 0 auto funcione en algunos navegadores */
+    margin: 0 auto; /* Centra la imagen horizontalmente */
+    /* Opcional: define un ancho máximo si es demasiado grande */
+    /* max-width: 800px; */ 
+} 
+
+.cart-checkout {
+    padding: 10px 20px 20px 20px; /* Espacio alrededor del botón */
+    display: flex;
+    justify-content: center;
+}
+
+/* Oculta el botón de checkout si tiene la clase .hidden */
+.cart-checkout.hidden {
+    display: none;
+}
+
+.btn-whatsapp {
+    display: inline-block;
+    background-color: #25D366; /* Color de WhatsApp */
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 25px; /* Bordes redondeados */
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none; /* Quitar subrayado */
+    text-align: center;
+    transition: background-color 0.3s ease;
+    
+    /* Para alinear el ícono y el texto */
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Espacio entre ícono y texto */
+}
+
+.btn-whatsapp:hover {
+    background-color: #128C7E; /* Color más oscuro al pasar el mouse */
+    color: #fff;
+}
+
+.btn-whatsapp .fa-brands {
+    font-size: 20px; /* Tamaño del ícono de WhatsApp */
+}
+/* Globales */
+*::after,
+*::before,
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0; /* CORRECCIÓN: Eliminado 'auto' */
+    width: 100%; /* AÑADIDO: Asegura el ancho completo */
+    /* Se eliminó 'max-width: 1200px;' de aquí */
+    font-family: 'Lato';
+    color: #333;
+}
+
+.icon-cart{
+    width: 30px;
+    height: 30px;
+    stroke: #000;
+}
+
+.icon-cart:hover{
+    cursor: pointer;
+}
+
+img{
+    max-width: 100%;
+}
+
+/* Header */
+
+
+.container-icon{
+    position: relative;
+}
+
+.count-products{
+    position: absolute;
+    top: 55%;
+    right: 0;
+
+    background-color: #000;
+    color: #fff;
+    width: 25px;
+    height: 25px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+#contador-productos{
+    font-size: 12px;
+}
+/* --- Fondo Oscuro (Overlay) --- */
+.cart-overlay {
+    position: fixed; /* Se fija a la pantalla */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Negro semi-transparente */
+    
+    /* Efecto "desenfocado" (blur) en el fondo - Opcional */
+    /* backdrop-filter: blur(3px); */
+    
+    z-index: 1040; /* Detrás del carrito (1050), delante de todo lo demás */
+}
+
+/* --- Botón "X" para Cerrar el Carrito --- */
+.icon-close-cart {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 25px;
+    height: 25px;
+    stroke: #333; /* Color de la X */
+    cursor: pointer;
+}
+
+.icon-close-cart:hover {
+    stroke: red; /* Color al pasar el mouse */
+}
+
+/* --- Ajuste al Carrito --- */
+.container-cart-products {
+    /* (Tus estilos de centrado que te di antes) */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    width: 400px;
+    max-width: 90%;
+    z-index: 1050; /* Debe estar ENCIMA del overlay */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.20);
+    border-radius: 10px;
+
+    /* Añadimos padding para que la "X" no choque con el contenido */
+    padding: 20px;
+    padding-top: 60px; /* Más espacio arriba para la X */
+}
+
+/* (Asegúrate que tu clase .hidden siga existiendo) */
+.hidden {
+    display: none;
+}
+
+
+
+.cart-product{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px;
+
+    border-bottom: 1px solid rgba(0, 0, 0, 0.20);
+
+}
+
+.info-cart-product{
+    display: flex;
+    justify-content: space-between;
+    flex: 0.8;
+}
+
+.titulo-producto-carrito{
+    font-size: 20px;
+}
+
+.precio-producto-carrito{
+    font-weight: 700;
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+.cantidad-producto-carrito{
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.icon-close{
+    width: 25px;
+    height: 25px;
+}
+
+.icon-close:hover{
+    stroke: red;
+    cursor: pointer;
+}
+
+.cart-total{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    gap: 20px;
+}
+
+.cart-total h3{
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.total-pagar{
+    font-size: 20px;
+    font-weight: 900;
+}
+
+.hidden-cart{
+    display: none;
+}
+
+
+
+
+/* Main */
+.container-items{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.item{
+    border-radius: 10px;
+}
+
+.item:hover{
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.20);
+}
+
+.item img{
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+    transition: all .5s;
+}
+
+.item figure{
+    overflow: hidden;
+}
+
+.item:hover img{
+    transform: scale(1.2);
+}
+
+.info-product{
+    padding: 15px 30px;
+    line-height: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.price{
+    font-size: 18px;
+    font-weight: 900;
+}
+
+.info-product button{
+    border: none;
+    background: none;
+    background-color: #000;
+    color: #fff;
+    padding: 15px 10px;
+    cursor: pointer;
+}
+
+.cart-empty{
+    padding: 20px;
+    text-align: center;
+}
+
+
+.hidden{
+    display: none;
+}
